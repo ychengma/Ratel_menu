@@ -20,7 +20,7 @@ export default defineConfig(({command,mode}) =>{
         ],
         resolve:{
             alias:{
-                '@':path.resolve(__dirname,'./src')
+                "@":path.resolve('./src')
             },
             extensions:['.js','.ts','.json']
         },
@@ -30,7 +30,7 @@ export default defineConfig(({command,mode}) =>{
                     javascripEnable:true,
                 }
             }
-        }
+        },
         server:{
             port:9527,
             host:'0.0.0.0',
