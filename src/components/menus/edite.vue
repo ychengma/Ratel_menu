@@ -6,44 +6,21 @@
         <el-form-item label="description">
             <el-input v-model="form.name" />
         </el-form-item>
-        <el-form-item label="Activity time">
-            <el-col :span="11">
-                <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%" />
-            </el-col>
-            <el-col :span="2" class="text-center">
-                <span class="text-gray-500">-</span>
-            </el-col>
-            <el-col :span="11">
-                <el-time-picker v-model="form.date2" placeholder="Pick a time" style="width: 100%" />
-            </el-col>
+        <el-form-item label="prix">
+            <el-input v-model="form.prix" />
         </el-form-item>
-        <el-form-item label="Instant delivery">
-            <el-switch v-model="form.delivery" />
+        <el-form-item label="tax">
+            <el-select v-model="form.tax" placeholder="Choisire une tax pour le produit">
+                <el-option label="5.5%" value="5.5" />
+                <el-option label="10%" value="10" default/>
+                <el-option label="20%" value="20" />
+            </el-select>
         </el-form-item>
-        <el-form-item label="Activity type">
-            <el-checkbox-group v-model="form.type">
-                <el-checkbox value="Online activities" name="type">
-                    Online activities
-                </el-checkbox>
-                <el-checkbox value="Promotion activities" name="type">
-                    Promotion activities
-                </el-checkbox>
-                <el-checkbox value="Offline activities" name="type">
-                    Offline activities
-                </el-checkbox>
-                <el-checkbox value="Simple brand exposure" name="type">
-                    Simple brand exposure
-                </el-checkbox>
-            </el-checkbox-group>
+        <el-form-item label="option">
+            <el-input v-model="form.option" />
         </el-form-item>
-        <el-form-item label="Resources">
-            <el-radio-group v-model="form.resource">
-                <el-radio value="Sponsor">Sponsor</el-radio>
-                <el-radio value="Venue">Venue</el-radio>
-            </el-radio-group>
-        </el-form-item>
-        <el-form-item label="Activity form">
-            <el-input v-model="form.desc" type="textarea" />
+        <el-form-item label="formul">
+            <el-input v-model="form.formul" />
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="onSubmit">Create</el-button>
@@ -55,17 +32,16 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-
+import PorduitType from './type'
 // do not use same name with ref
-const form = ref({
+const form = ref<PorduitType>({
+    ref: '',
     name: '',
     description: '',
-    date1: '',
-    date2: '',
-    delivery: false,
-    type: [],
-    resource: '',
-    desc: '',
+    prix: 0,
+    tax: '10%',
+    option: null,
+    formul: null
 })
 
 const onSubmit = () => {

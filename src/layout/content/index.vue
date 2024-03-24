@@ -1,5 +1,5 @@
 <template>
-    <div class="top">
+    <div class="top-nav">
         <Navicateur></Navicateur>
     </div>
     <div class="main">
@@ -13,5 +13,9 @@ import Main from './main/index.vue'
 </script>
 
 <style scoped lang='scss'>
-
+.top-nav{
+    background-image: linear-gradient(to right,rgb(204, 202, 202),rgb(240, 219, 219),rgb(223, 203, 203)) !important;
+    transition: all 0.3s;
+    
+}
 </style>

@@ -1,10 +1,9 @@
-
-interface PorduitType{
+export default interface PorduitType{
     ref:string,
-    Name:string,
+    name:string,
     description:string,
     prix:number,
-    tax:number,
+    tax:string,
     option:any,
     formul:any
 }
